@@ -32,7 +32,7 @@ xml: context [
 	ws:         charset reduce [space tab cr lf]
 	attributes: [
 		any ws some name-chars change ["="] space
-		2 thru #"^"" any ws 
+		[#"^"" thru #"^"" | change #"'" #"^"" thru change #"'" #"^""] any ws
 	]
 	comments:   [change [any ws "<!--" thru "-->"] ""]    
 	nodes:      [
